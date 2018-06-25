@@ -8,8 +8,8 @@
 <title>call you</title>
 </head>
 <body>
-    <input type="text" size=6 id="num" /> <input type="button" value="click me" onclick="call_you()" />
-    <audio id="dosome" style="opacity: 0" hidden="true"></audio>
+<input type="text" size=6 id="num" /> <input type="button" value="click me" onclick="call_you()" />
+<audio id="dosome" style="opacity: 0" hidden="true"></audio>
 <script>
 var MyPlay = {
     _pool:[],
@@ -43,7 +43,7 @@ var MyPlay = {
         this._pool.push(this._prefix);
         len = nums.length;
         for(var i=0;i<len;i++){
-            this._pool.push(this._path+nums[i]+".mp3");
+             this._pool.push(this._path+nums[i]+".mp3");
         }
         this._pool.push(this._postfix);
         this.play();   
