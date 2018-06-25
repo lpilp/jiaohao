@@ -9,11 +9,11 @@
 </head>
 <body>
     <input type="text" size=6 id="num" /> <input type="button" value="click me" onclick="call_you()" />
-	<audio id="dosome" style="opacity: 0" hidden="true"></audio>
+    <audio id="dosome" style="opacity: 0" hidden="true"></audio>
 <script>
 var MyPlay = {
-	_pool:[],
-	_index:0,
+    _pool:[],
+    _index:0,
     _path : 'audio/',
     _prefix:'',
     _postfix: '',
@@ -24,17 +24,18 @@ var MyPlay = {
         this.audio = document.getElementById(id);
         var that = this;
         this.audio.addEventListener('ended', function () {
-        	that._index ++;
+            that._index ++;
             if(that._index>=that._pool.length){
                 that._index = 0;
                 return;
             }            
-        	that.play();      	
+            that.play();          
         });
         console.log('OK');
     },
     jiaohao: function(num){
         this._pool=[];
+        this._index = 0;
         var len=0;
         num +='';
         var nums = num.split('');
@@ -42,7 +43,7 @@ var MyPlay = {
         this._pool.push(this._prefix);
         len = nums.length;
         for(var i=0;i<len;i++){
-        	this._pool.push(this._path+nums[i]+".mp3");
+            this._pool.push(this._path+nums[i]+".mp3");
         }
         this._pool.push(this._postfix);
         this.play();   
@@ -54,9 +55,9 @@ var MyPlay = {
 };
 MyPlay.init('dosome');
 function call_you(){
-	var num = $('#num').val();
+    var num = $('#num').val();
     MyPlay.jiaohao(num);
-	
+    
 }
 </script>
 </body>
